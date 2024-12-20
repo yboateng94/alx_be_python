@@ -1,34 +1,27 @@
-# daily_reminder.py
+def daily_reminder():
+    # Prompt for task details
+    task = input("Enter the task description: ")
+    priority = input("Enter the task priority (high, medium, low): ").lower()
+    time_bound = input("Is the task time-bound? (yes or no): ").lower()
 
-# Prompt the user for a single task description
-task = input("Enter your task: ")
-
-# Prompt for the task's priority
-priority = input("Enter the priority of the task (high, medium, low): ").strip().lower()
-
-# Ask if the task is time-bound
-time_bound = input("Is the task time-bound? (yes or no): ").strip().lower()
-
-
-# Process the task based on priority and time sensitivity
-def generate_reminder(task, priority, time_bound):
+    # Process based on priority
     match priority:
-        case 'high':
-            reminder = f"Task: {task} (Priority: High)"
-        case 'medium':
-            reminder = f"Task: {task} (Priority: Medium)"
-        case 'low':
-            reminder = f"Task: {task} (Priority: Low)"
+        case "high":
+            reminder = f"Task: {task} (Priority: High) - Ensure this task is handled urgently."
+        case "medium":
+            reminder = f"Task: {task} (Priority: Medium) - Address this task soon."
+        case "low":
+            reminder = f"Task: {task} (Priority: Low) - This task can wait."
         case _:
-            reminder = "Invalid priority entered. Please use 'high', 'medium', or 'low'."
-            return reminder
+            reminder = f"Task: {task} (Priority: Unknown) - Please review the priority."
 
-    if time_bound == 'yes' and priority in ['high', 'medium', 'low']:
-        reminder += " - that requires immediate attention today!"
+    # Check if the task is time-bound
+    if time_bound == "yes":
+        reminder += " This task requires immediate attention today!"
 
-    return reminder
+    # Print the customized reminder
+    print(reminder)
 
-
-# Generate and display the customized reminder
-customized_reminder = generate_reminder(task, priority, time_bound)
-print(customized_reminder)
+# Run the function
+if __name__ == "__main__":
+    daily_reminder()

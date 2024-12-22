@@ -7,11 +7,11 @@ def daily_reminder():
     # Process based on priority
     match priority:
         case "high":
-            reminder = f"Task: {task} (Priority: High) - Ensure this task is handled urgently."
+            reminder = f"Task: {task} (Priority: High)"
         case "medium":
             reminder = f"Task: {task} (Priority: Medium) - Address this task soon."
         case "low":
-            reminder = f"Task: {task} (Priority: Low) - This task can wait."
+            reminder = f"Task: {task} (Priority: Low) - Consider completing it when you have free time."
         case _:
             reminder = f"Task: {task} (Priority: Unknown) - Please review the priority."
 

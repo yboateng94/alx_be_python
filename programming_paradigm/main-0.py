@@ -20,7 +20,7 @@ def main():
         else:
             print("Insufficient funds.")
     elif command == "display":
-        account.display_balance(Current_Balance)
+        account.display_balance()
     else:
         print("Invalid command.")
 

@@ -21,7 +21,7 @@ def main():
             print("Insufficient funds.")
     elif command == "display":
         account.display_balance()
-        print("Current Balance:")
+        print(f"Current Balance: ${amount:.2f}")
     else:
         print("Invalid command.")
 
